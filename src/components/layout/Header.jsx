@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { ChevronDown, Menu, X } from "lucide-react";
 
 function Header() {
@@ -11,12 +12,12 @@ function Header() {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <div className="text-xl font-bold">
-            <a
-              href="/"
+            <Link
+              to="/"
               className="flex items-center space-x-2 hover:opacity-80 transition-opacity duration-300"
             >
               <span className="text-blue-400">Expect</span>
-            </a>
+            </Link>
           </div>
 
           {/* Botón menú móvil */}
@@ -34,12 +35,12 @@ function Header() {
           {/* Menú de navegación - Desktop */}
           <ul className="hidden lg:flex space-x-8">
             <li>
-              <a
-                href="/"
+              <Link
+                to="/"
                 className="text-gray-400 hover:text-white transition-colors duration-300 font-medium flex items-center py-2"
               >
                 Inicio
-              </a>
+              </Link>
             </li>
             <li className="relative">
               <button
@@ -61,43 +62,43 @@ function Header() {
                     : "opacity-0 scale-y-0 pointer-events-none"
                 }`}
               >
-                <a
-                  href="/properties/rent"
+                <Link
+                  to="/properties/rent"
                   className="block px-6 py-2 text-gray-400 hover:text-white hover:bg-gray-700 transition-colors duration-200 whitespace-nowrap"
                 >
                   En renta
-                </a>
-                <a
-                  href="/properties/sale"
+                </Link>
+                <Link
+                  to="/properties/sale"
                   className="block px-6 py-2 text-gray-400 hover:text-white hover:bg-gray-700 transition-colors duration-200 whitespace-nowrap"
                 >
                   En venta
-                </a>
+                </Link>
               </div>
             </li>
             <li>
-              <a
-                href="/projects"
+              <Link
+                to="/projects"
                 className="text-gray-400 hover:text-white transition-colors duration-300 font-medium flex items-center py-2"
               >
                 Proyectos
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="/about"
+              <Link
+                to="/about"
                 className="text-gray-400 hover:text-white transition-colors duration-300 font-medium flex items-center py-2"
               >
                 Nosotros
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="/contact"
+              <Link
+                to="/contact"
                 className="text-gray-400 hover:text-white transition-colors duration-300 font-medium flex items-center py-2"
               >
                 Contáctanos
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
@@ -112,12 +113,12 @@ function Header() {
         >
           <ul className="pt-4 pb-3 space-y-2">
             <li>
-              <a
-                href="/"
+              <Link
+                to="/"
                 className="block text-gray-400 hover:text-white transition-colors duration-300 font-medium py-2"
               >
                 Inicio
-              </a>
+              </Link>
             </li>
             <li>
               <button
@@ -136,43 +137,43 @@ function Header() {
                   isPropertiesOpen ? "block" : "hidden"
                 }`}
               >
-                <a
-                  href="/properties/rent"
+                <Link
+                  to="/properties/rent"
                   className="block text-gray-400 hover:text-white transition-colors duration-200 py-2"
                 >
                   En renta
-                </a>
-                <a
-                  href="/properties/sale"
+                </Link>
+                <Link
+                  to="/properties/sale"
                   className="block text-gray-400 hover:text-white transition-colors duration-200 py-2"
                 >
                   En venta
-                </a>
+                </Link>
               </div>
             </li>
             <li>
-              <a
-                href="/projects"
+              <Link
+                to="/projects"
                 className="block text-gray-400 hover:text-white transition-colors duration-300 font-medium py-2"
               >
                 Proyectos
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="/about"
+              <Link
+                to="/about"
                 className="block text-gray-400 hover:text-white transition-colors duration-300 font-medium py-2"
               >
                 Nosotros
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="/contact"
+              <Link
+                to="/contact"
                 className="block text-gray-400 hover:text-white transition-colors duration-300 font-medium py-2"
               >
                 Contáctanos
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
