@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { ChevronDown } from "lucide-react";
-
+import { ChevronDown, Menu, X } from "lucide-react";
 
 function Header() {
   const [isPropertiesOpen, setIsPropertiesOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
     <header className="bg-gray-800 text-white shadow-lg">
@@ -19,8 +19,20 @@ function Header() {
             </a>
           </div>
 
-          {/* Menú de navegación */}
-          <ul className="flex space-x-8">
+          {/* Botón menú móvil */}
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="lg:hidden text-gray-400 hover:text-white transition-colors duration-300"
+          >
+            {isMobileMenuOpen ? (
+              <X className="w-6 h-6" />
+            ) : (
+              <Menu className="w-6 h-6" />
+            )}
+          </button>
+
+          {/* Menú de navegación - Desktop */}
+          <ul className="hidden lg:flex space-x-8">
             <li>
               <a
                 href="/"
@@ -41,8 +53,7 @@ function Header() {
                   }`}
                 />
               </button>
-
-              {/* Menú desplegable */}
+              {/* Menú desplegable - Desktop */}
               <div
                 className={`absolute top-full left-0 mt-1 py-2 bg-gray-800 rounded-lg shadow-xl transition-all duration-300 transform origin-top ${
                   isPropertiesOpen
@@ -84,6 +95,81 @@ function Header() {
               <a
                 href="/contact"
                 className="text-gray-400 hover:text-white transition-colors duration-300 font-medium flex items-center py-2"
+              >
+                Contáctanos
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        {/* Menú móvil */}
+        <div
+          className={`lg:hidden transition-all duration-300 ${
+            isMobileMenuOpen
+              ? "max-h-96 opacity-100"
+              : "max-h-0 opacity-0 overflow-hidden"
+          }`}
+        >
+          <ul className="pt-4 pb-3 space-y-2">
+            <li>
+              <a
+                href="/"
+                className="block text-gray-400 hover:text-white transition-colors duration-300 font-medium py-2"
+              >
+                Inicio
+              </a>
+            </li>
+            <li>
+              <button
+                onClick={() => setIsPropertiesOpen(!isPropertiesOpen)}
+                className="w-full text-left text-gray-400 hover:text-white transition-colors duration-300 font-medium py-2 flex items-center justify-between"
+              >
+                Propiedades
+                <ChevronDown
+                  className={`w-4 h-4 transition-transform duration-300 ${
+                    isPropertiesOpen ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+              <div
+                className={`pl-4 mt-2 space-y-2 transition-all duration-300 ${
+                  isPropertiesOpen ? "block" : "hidden"
+                }`}
+              >
+                <a
+                  href="/properties/rent"
+                  className="block text-gray-400 hover:text-white transition-colors duration-200 py-2"
+                >
+                  En renta
+                </a>
+                <a
+                  href="/properties/sale"
+                  className="block text-gray-400 hover:text-white transition-colors duration-200 py-2"
+                >
+                  En venta
+                </a>
+              </div>
+            </li>
+            <li>
+              <a
+                href="/projects"
+                className="block text-gray-400 hover:text-white transition-colors duration-300 font-medium py-2"
+              >
+                Proyectos
+              </a>
+            </li>
+            <li>
+              <a
+                href="/about"
+                className="block text-gray-400 hover:text-white transition-colors duration-300 font-medium py-2"
+              >
+                Nosotros
+              </a>
+            </li>
+            <li>
+              <a
+                href="/contact"
+                className="block text-gray-400 hover:text-white transition-colors duration-300 font-medium py-2"
               >
                 Contáctanos
               </a>
