@@ -1,9 +1,10 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import Header from './components/layout/Header'
-import Footer from './components/layout/Footer'
-import Home from './pages/Home'
-import PropertiesSend from './pages/PropertiesSend'  // Importa el componente
-import './index.css'  
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Header from "./components/layout/Header";
+import Footer from "./components/layout/Footer";
+import Home from "./pages/Home";
+import PropertiesSend from "./pages/PropertiesSend"; // Importa el componente
+import Contact from "./pages/Contact";
+import "./index.css";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/properties/sale" element={<PropertiesSend />} />
+            <Route path="/Contact" element={<Contact />} />
             {/* Aquí puedes agregar más rutas según necesites */}
             {/* Por ejemplo: */}
             {/* <Route path="/properties/rent" element={<PropertiesRent />} /> */}
@@ -24,7 +26,7 @@ function App() {
         <Footer />
       </div>
     </Router>
-  )
+  );
 }
 
-export default App
+export default App;
