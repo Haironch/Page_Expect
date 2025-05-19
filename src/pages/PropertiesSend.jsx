@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
-import { 
+import React, { useState } from "react";
+import {
   Search,
-  MapPin, 
-  BedDouble, 
-  Bath, 
+  MapPin,
+  BedDouble,
+  Bath,
   Square,
   Heart,
   Share2,
-  Tag
-} from 'lucide-react';
-import PropertyCard from '../components/home/PropertyCard';  // Asegúrate de que la ruta sea correcta
+  Tag,
+} from "lucide-react";
+import PropertyCard from "../components/home/PropertyCard"; // Asegúrate de que la ruta sea correcta
 
 function PropertiesSend() {
   const [favorites, setFavorites] = useState([]);
@@ -24,8 +24,8 @@ function PropertiesSend() {
       bedrooms: 4,
       bathrooms: 3,
       area: "280m²",
-      image: "/api/placeholder/400/300",
-      features: ["Jardín", "Piscina", "Garage doble"]
+      image: "/imagenes/apartamento2.jpg", // ✅ Ruta corregida
+      features: ["Jardín", "Piscina", "Garage doble"],
     },
     {
       id: 2,
@@ -35,16 +35,27 @@ function PropertiesSend() {
       bedrooms: 3,
       bathrooms: 2,
       area: "150m²",
-      image: "/api/placeholder/400/300",
-      features: ["Vista a la ciudad", "Seguridad 24/7", "Área social"]
+      image: "/imagenes/apartemento1.jpg", // ✅ Ruta corregida
+      features: ["Vista a la ciudad", "Seguridad 24/7", "Área social"],
+    },
+    {
+      id: 3,
+      title: "Edificio en Zona 1",
+      price: "Q3,200,000",
+      location: "Zona 1, Guatemala",
+      bedrooms: 10,
+      bathrooms: 8,
+      area: "650m²",
+      image: "/imagenes/edificio1.jpg",
+      features: ["Área comercial", "Parqueo techado", "Balcón con vista"],
     },
     // Puedes agregar más propiedades aquí
   ];
 
   const toggleFavorite = (propertyId) => {
-    setFavorites(prev => 
+    setFavorites((prev) =>
       prev.includes(propertyId)
-        ? prev.filter(id => id !== propertyId)
+        ? prev.filter((id) => id !== propertyId)
         : [...prev, propertyId]
     );
   };
@@ -60,7 +71,7 @@ function PropertiesSend() {
               <span className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-orange-500 via-orange-400 to-orange-500 transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
             </span>
           </h1>
-          
+
           {/* Barra de búsqueda */}
           <div className="max-w-3xl mx-auto backdrop-blur-sm bg-white/10 rounded-xl p-4 shadow-xl border border-white/10">
             <div className="flex flex-col md:flex-row gap-4">
@@ -76,27 +87,41 @@ function PropertiesSend() {
                              focus:ring-1 focus:ring-orange-500/50
                              transition-all duration-300"
                   />
-                  <Search className="absolute left-3 top-3.5 text-gray-400 w-5 h-5 
-                                   group-hover:text-orange-500 transition-colors duration-300" />
+                  <Search
+                    className="absolute left-3 top-3.5 text-gray-400 w-5 h-5 
+                                   group-hover:text-orange-500 transition-colors duration-300"
+                  />
                 </div>
               </div>
               <div className="flex gap-3">
-                <select className="px-4 py-3 rounded-lg 
+                <select
+                  className="px-4 py-3 rounded-lg 
                                  bg-white/10 border border-white/20 
                                  text-white cursor-pointer
                                  focus:bg-white/20 focus:border-orange-500/50 
                                  focus:ring-1 focus:ring-orange-500/50
-                                 transition-all duration-300">
-                  <option value="" className="text-gray-900">Precio</option>
-                  <option value="1" className="text-gray-900">Q1M - Q2M</option>
-                  <option value="2" className="text-gray-900">Q2M - Q3M</option>
-                  <option value="3" className="text-gray-900">Q3M+</option>
+                                 transition-all duration-300"
+                >
+                  <option value="" className="text-gray-900">
+                    Precio
+                  </option>
+                  <option value="1" className="text-gray-900">
+                    Q1M - Q2M
+                  </option>
+                  <option value="2" className="text-gray-900">
+                    Q2M - Q3M
+                  </option>
+                  <option value="3" className="text-gray-900">
+                    Q3M+
+                  </option>
                 </select>
-                <button className="bg-orange-500 text-white px-8 py-3 rounded-lg 
+                <button
+                  className="bg-orange-500 text-white px-8 py-3 rounded-lg 
                                  hover:bg-orange-600 active:bg-orange-700
                                  transform hover:-translate-y-0.5 active:translate-y-0
                                  transition-all duration-300
-                                 shadow-lg hover:shadow-orange-500/20">
+                                 shadow-lg hover:shadow-orange-500/20"
+                >
                   <span className="flex items-center gap-2">
                     <Search className="w-4 h-4" />
                     Buscar
@@ -126,7 +151,7 @@ function PropertiesSend() {
 
           {/* Grid de Propiedades usando el nuevo PropertyCard */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {properties.map(property => (
+            {properties.map((property) => (
               <PropertyCard
                 key={property.id}
                 property={property}

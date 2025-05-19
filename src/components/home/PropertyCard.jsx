@@ -1,19 +1,15 @@
-import React from 'react';
-import { 
-  MapPin, 
-  BedDouble, 
-  Bath, 
+import React from "react";
+import {
+  MapPin,
+  BedDouble,
+  Bath,
   Square,
   Heart,
   Share2,
-  Tag
-} from 'lucide-react';
+  Tag,
+} from "lucide-react";
 
-const PropertyCard = ({ 
-  property, 
-  isFavorite, 
-  onToggleFavorite 
-}) => {
+const PropertyCard = ({ property, isFavorite, onToggleFavorite }) => {
   return (
     <div className="group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
       {/* Imagen y badges */}
@@ -28,21 +24,21 @@ const PropertyCard = ({
             En Venta
           </span>
         </div>
-        
+
         {/* Botones de acción */}
         <div className="absolute top-4 right-4 flex gap-2">
-          <button 
+          <button
             onClick={(e) => {
               e.preventDefault();
               onToggleFavorite(property.id);
             }}
             className="p-2 rounded-full bg-white/90 backdrop-blur-sm shadow-lg hover:bg-white transition-colors group/btn"
           >
-            <Heart 
+            <Heart
               className={`w-5 h-5 transition-colors ${
                 isFavorite
-                  ? 'text-red-500 fill-current'
-                  : 'text-gray-600 group-hover/btn:text-red-500'
+                  ? "text-red-500 fill-current"
+                  : "text-gray-600 group-hover/btn:text-red-500"
               }`}
             />
           </button>
@@ -55,7 +51,9 @@ const PropertyCard = ({
         <div className="absolute bottom-4 left-4">
           <div className="flex items-center gap-2 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg">
             <Tag className="w-4 h-4 text-blue-600" />
-            <span className="text-lg font-bold text-gray-900">{property.price}</span>
+            <span className="text-lg font-bold text-gray-900">
+              {property.price}
+            </span>
           </div>
         </div>
       </div>
@@ -75,7 +73,9 @@ const PropertyCard = ({
         <div className="flex gap-6 text-gray-600 mb-6 border-y border-gray-100 py-4">
           <div className="flex items-center gap-2">
             <BedDouble className="w-5 h-5 text-blue-600" />
-            <span className="text-gray-700">{property.bedrooms} Habitaciones</span>
+            <span className="text-gray-700">
+              {property.bedrooms} Habitaciones
+            </span>
           </div>
           <div className="flex items-center gap-2">
             <Bath className="w-5 h-5 text-blue-600" />
@@ -100,9 +100,14 @@ const PropertyCard = ({
         </div>
 
         {/* Botón de acción */}
-        <button className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 active:bg-blue-800 transition-colors flex items-center justify-center gap-2 group/btn">
+        <button
+          onClick={() => onViewDetails(property)}
+          className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 active:bg-blue-800 transition-colors flex items-center justify-center gap-2 group/btn"
+        >
           <span>Ver Detalles</span>
-          <span className="transform translate-x-0 group-hover/btn:translate-x-1 transition-transform">→</span>
+          <span className="transform translate-x-0 group-hover/btn:translate-x-1 transition-transform">
+            →
+          </span>
         </button>
       </div>
     </div>

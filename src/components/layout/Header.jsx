@@ -16,7 +16,7 @@ function Header() {
               to="/"
               className="flex items-center space-x-2 hover:opacity-80 transition-opacity duration-300"
             >
-              <span className="text-blue-400">Expect</span>
+              <span className="text-blue-400">Proyectos Xela</span>
             </Link>
           </div>
 

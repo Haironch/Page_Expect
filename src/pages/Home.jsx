@@ -19,9 +19,13 @@ function Home() {
               Transformando Hogares, Cumpliendo Sueños
             </h1>
             <p className="text-xl text-gray-300 mb-12 leading-relaxed">
-              En <span className="font-semibold text-orange-500">Expect</span>, nuestra misión
-              es mucho más que comprar y vender propiedades; se trata de
-              transformar vidas y construir futuros llenos de esperanza.
+              En{" "}
+              <span className="font-semibold text-orange-500">
+                Proyectos Xela
+              </span>
+              , nuestra misión es mucho más que comprar y vender propiedades; se
+              trata de transformar vidas y construir futuros llenos de
+              esperanza.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6">
               <button className="bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-colors text-lg">
@@ -110,14 +114,18 @@ function Home() {
             </div>
             <div className="text-center">
               <UsersRound className="w-12 h-12 text-orange-500 mx-auto mb-4" />
-              <h3 className="font-semibold text-xl mb-2 text-blue-900">Familia</h3>
+              <h3 className="font-semibold text-xl mb-2 text-blue-900">
+                Familia
+              </h3>
               <p className="text-gray-600">
                 Entendemos que un hogar es el corazón de toda familia.
               </p>
             </div>
             <div className="text-center">
               <Heart className="w-12 h-12 text-orange-500 mx-auto mb-4" />
-              <h3 className="font-semibold text-xl mb-2 text-blue-900">Servicio</h3>
+              <h3 className="font-semibold text-xl mb-2 text-blue-900">
+                Servicio
+              </h3>
               <p className="text-gray-600">
                 Trabajamos con pasión para que encuentres más que una casa,
                 encuentres un hogar.
@@ -133,7 +141,9 @@ function Home() {
           <h2 className="text-2xl font-bold mb-4">
             Déjanos ayudarte a cumplir tus sueños
           </h2>
-          <p className="text-lg text-gray-300 mb-6">Tu nuevo hogar comienza aquí.</p>
+          <p className="text-lg text-gray-300 mb-6">
+            Tu nuevo hogar comienza aquí.
+          </p>
           <button className="bg-orange-500 text-white px-8 py-3 rounded-lg hover:bg-orange-600 transition-colors">
             Contáctanos hoy
           </button>

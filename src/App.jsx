@@ -3,6 +3,8 @@ import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
 import Home from "./pages/Home";
 import PropertiesSend from "./pages/PropertiesSend";
+import PropertiesRent from "./pages/PropertiesRent";
+import FutureProjects from "./pages/FutureProjects";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
 
@@ -17,13 +19,10 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/properties/sale" element={<PropertiesSend />} />
+            <Route path="/properties/rent" element={<PropertiesRent />} />
+            <Route path="/projects" element={<FutureProjects />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
-            {/* Aquí puedes agregar más rutas según necesites */}
-            {/* Por ejemplo: */}
-            {/* <Route path="/properties/rent" element={<PropertiesRent />} /> */}
-            {/* <Route path="/about" element={<About />} /> */}
-            {/* <Route path="/contact" element={<Contact />} /> */}
           </Routes>
         </main>
         <Footer />
