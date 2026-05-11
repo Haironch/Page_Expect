@@ -11,7 +11,6 @@ import {
   ShieldCheck,
   Phone,
   Ruler,
-  Trees,
   Star,
 } from "lucide-react";
 
@@ -34,6 +33,7 @@ const featuredLands = [
     access: "Calle asfaltada",
     badge: "Disponible",
     badgeColor: "bg-green-500",
+    image: "https://loremflickr.com/800/500/land,terrain,field?lock=10",
   },
   {
     id: 2,
@@ -46,6 +46,7 @@ const featuredLands = [
     access: "Carretera principal",
     badge: "Última unidad",
     badgeColor: "bg-orange-500",
+    image: "https://loremflickr.com/800/500/land,nature,mountain?lock=22",
   },
   {
     id: 3,
@@ -58,6 +59,7 @@ const featuredLands = [
     access: "Calle adoquinada",
     badge: "Nuevo",
     badgeColor: "bg-blue-600",
+    image: "https://loremflickr.com/800/500/field,green,nature?lock=35",
   },
 ];
 
@@ -215,9 +217,14 @@ function Home() {
                 key={land.id}
                 className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden"
               >
-                {/* placeholder image / gradient */}
-                <div className="relative h-48 bg-gradient-to-br from-green-800 to-green-600 flex items-center justify-center">
-                  <Trees className="w-16 h-16 text-green-300/60" />
+                {/* imagen del terreno */}
+                <div className="relative h-48 overflow-hidden">
+                  <img
+                    src={land.image}
+                    alt={land.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
                   <span
                     className={`absolute top-3 left-3 ${land.badgeColor} text-white text-xs font-semibold px-3 py-1 rounded-full`}
                   >

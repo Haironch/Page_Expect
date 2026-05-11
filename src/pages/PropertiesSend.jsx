@@ -14,42 +14,67 @@ import PropertyCard from "../components/home/PropertyCard"; // Asegúrate de que
 function PropertiesSend() {
   const [favorites, setFavorites] = useState([]);
 
-  // Datos de ejemplo de propiedades
   const properties = [
     {
       id: 1,
-      title: "Casa Moderna en Zona 10",
-      price: "Q2,500,000",
-      location: "Zona 10, Guatemala",
-      bedrooms: 4,
-      bathrooms: 3,
-      area: "280m²",
-      image: "/imagenes/apartamento2.jpg", // ✅ Ruta corregida
-      features: ["Jardín", "Piscina", "Garage doble"],
+      title: "Lote Residencial Zona 3",
+      price: "Q 240,000",
+      location: "Quetzaltenango, Zona 3",
+      areaM2: "200 m²",
+      pricePerM2: "Q 1,200/m²",
+      image: "https://loremflickr.com/800/500/land,terrain,field?lock=10",
+      features: ["Agua", "Luz", "Drenaje", "Calle asfaltada"],
     },
     {
       id: 2,
-      title: "Apartamento de Lujo",
-      price: "Q1,800,000",
-      location: "Zona 14, Guatemala",
-      bedrooms: 3,
-      bathrooms: 2,
-      area: "150m²",
-      image: "/imagenes/apartemento1.jpg", // ✅ Ruta corregida
-      features: ["Vista a la ciudad", "Seguridad 24/7", "Área social"],
+      title: "Terreno Comercial Carretera",
+      price: "Q 475,000",
+      location: "Salcajá, Quetzaltenango",
+      areaM2: "500 m²",
+      pricePerM2: "Q 950/m²",
+      image: "https://loremflickr.com/800/500/land,nature,mountain?lock=22",
+      features: ["Agua", "Luz", "Carretera principal"],
     },
     {
       id: 3,
-      title: "Edificio en Zona 1",
-      price: "Q3,200,000",
-      location: "Zona 1, Guatemala",
-      bedrooms: 10,
-      bathrooms: 8,
-      area: "650m²",
-      image: "/imagenes/edificio1.jpg",
-      features: ["Área comercial", "Parqueo techado", "Balcón con vista"],
+      title: "Lote Valle Verde",
+      price: "Q 256,000",
+      location: "San Marcos, Guatemala",
+      areaM2: "320 m²",
+      pricePerM2: "Q 800/m²",
+      image: "https://loremflickr.com/800/500/field,green,nature?lock=35",
+      features: ["Agua", "Luz", "Drenaje", "Internet", "Calle adoquinada"],
     },
-    // Puedes agregar más propiedades aquí
+    {
+      id: 4,
+      title: "Terreno Residencial Cantel",
+      price: "Q 185,000",
+      location: "Cantel, Quetzaltenango",
+      areaM2: "150 m²",
+      pricePerM2: "Q 1,233/m²",
+      image: "https://loremflickr.com/800/500/countryside,land,grass?lock=47",
+      features: ["Agua", "Luz", "Calle asfaltada"],
+    },
+    {
+      id: 5,
+      title: "Lote Industrial Zona 5",
+      price: "Q 890,000",
+      location: "Quetzaltenango, Zona 5",
+      areaM2: "1,200 m²",
+      pricePerM2: "Q 742/m²",
+      image: "https://loremflickr.com/800/500/field,earth,terrain?lock=58",
+      features: ["Agua", "Luz", "Drenaje", "Carretera principal"],
+    },
+    {
+      id: 6,
+      title: "Terreno con Vista al Volcán",
+      price: "Q 320,000",
+      location: "Almolonga, Quetzaltenango",
+      areaM2: "400 m²",
+      pricePerM2: "Q 800/m²",
+      image: "https://loremflickr.com/800/500/volcano,landscape,nature?lock=63",
+      features: ["Agua", "Luz", "Vista panorámica"],
+    },
   ];
 
   const toggleFavorite = (propertyId) => {

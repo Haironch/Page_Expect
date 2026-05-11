@@ -14,42 +14,40 @@ import PropertyCard from "../components/home/PropertyCard"; // Asegúrate de que
 function PropertiesRent() {
   const [favorites, setFavorites] = useState([]);
 
-  // Datos de ejemplo de propiedades en renta
   const properties = [
     {
       id: 1,
       title: "Apartamento Moderno en Zona 10",
-      price: "Q5,500/mes",
-      location: "Zona 10, Guatemala",
+      price: "Q 5,500/mes",
+      location: "Zona 10, Guatemala City",
       bedrooms: 2,
       bathrooms: 2,
-      area: "120m²",
-      image: "/imagenes/apartamento3.jpg",
+      area: "120 m²",
+      image: "https://loremflickr.com/800/500/apartment,interior,modern?lock=71",
       features: ["Amueblado", "Seguridad 24/7", "Gimnasio"],
     },
     {
       id: 2,
-      title: "Casa Familiar",
-      price: "Q8,200/mes",
-      location: "Zona 15, Guatemala",
+      title: "Casa Familiar con Jardín",
+      price: "Q 8,200/mes",
+      location: "Zona 15, Guatemala City",
       bedrooms: 4,
       bathrooms: 3,
-      area: "220m²",
-      image: "/imagenes/casa1.jpg",
+      area: "220 m²",
+      image: "https://loremflickr.com/800/500/house,home,garden?lock=83",
       features: ["Jardín", "Área de BBQ", "Garage doble"],
     },
     {
       id: 3,
       title: "Oficina Ejecutiva",
-      price: "Q9,800/mes",
-      location: "Zona 4, Guatemala",
+      price: "Q 9,800/mes",
+      location: "Zona 4, Guatemala City",
       bedrooms: 1,
       bathrooms: 2,
-      area: "150m²",
-      image: "/imagenes/oficina1.jpg",
+      area: "150 m²",
+      image: "https://loremflickr.com/800/500/office,corporate,interior?lock=92",
       features: ["Recepción", "Sala de juntas", "Parqueo incluido"],
     },
-    // Puedes agregar más propiedades aquí
   ];
 
   const toggleFavorite = (propertyId) => {
