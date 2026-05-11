@@ -8,6 +8,7 @@ import PropertiesRent from "./pages/PropertiesRent";
 import FutureProjects from "./pages/FutureProjects";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
+import PropertyDetail from "./pages/PropertyDetail";
 
 import "./index.css";
 
@@ -43,6 +44,7 @@ function App() {
             <Route path="/projects" element={<FutureProjects />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/property/:id" element={<PropertyDetail />} />
           </Routes>
         </main>
         <Footer />
